@@ -67,8 +67,8 @@ resource "aws_security_group" "gui_sg" {
 }
 
 resource "aws_instance" "ubuntu" {
-#   ami           = data.aws_ami.ubuntu.id
-  ami = "ami-0dee22c13ea7a9a67"
+  ami           = data.aws_ami.ubuntu.id
+  # ami = "ami-0dee22c13ea7a9a67"
   instance_type = "t2.micro"
   key_name      = aws_key_pair.ssh_key_pair.key_name
   vpc_security_group_ids = [aws_security_group.gui_sg.id]
